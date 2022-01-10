@@ -1,0 +1,28 @@
+<!-- Import the header section -->
+<%- include("./header"); %>
+
+<div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+</div>
+
+<div class="box">
+    <!-- Loops through the items array -->
+    <% for (var i = 0; i < newListItems.length; i++) { %>
+    <div class="item">
+        <input type="checkbox">
+        <!-- Shows the newly added item in the array -->
+        <p><%= newListItems[i] %></p>
+    </div>
+    <% } %>
+
+
+    <!-- Sends data -->
+    <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="list" value=<%= listTitle %>>+</button>
+    </form>
+</div>
+
+<!-- Import the footer section -->
+
+<%- include("./footer"); %>
