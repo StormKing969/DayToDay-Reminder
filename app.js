@@ -2,6 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const port = process.env.PORT || 3000;
 
 // importing local module
 const date = require(__dirname + "/date.js");
@@ -43,6 +44,6 @@ app.post("/", function(req, res) {
 
 });
 
-app.listen(process.env.PORT || 3000, function() {
-    console.log("Server is connected to port 3000")
+app.listen(port, function() {
+    console.log("Server is connected to port " + port)
 });
